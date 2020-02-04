@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Translator</title>
+
+    <link rel="stylesheet" href="../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../style/index.css"/>
+
+    <script src="../../lib/clipboard.js-dist/clipboard.min.js"></script>
+    <script>
+      var renderer = require("../renderer/index.js");
+      //bing背景
+      //require("../renderer/background.js");
+    </script>
+
+  </head>
+  
+  <body>
+
+    <div id="titlebar" class="navbar navbar-default navbar-fixed-top">
+      <img id="icon" src="../../assets/icon.png" height="25" width="25"/>
+      <p id="title">Translator</p>
+      <button class="appbarBtn" onclick="renderer.exit()">×</button>
+      <button class="appbarBtn" onclick="renderer.min()">—</button>
+    </div>
+
+    <div class="container-fluid">
+
+        <div id="selection" class="row">
+          <select id="from">
+            <option value="auto">自动</option>
+            <option value="zh-CHS">中文</option>
+            <option value="en">英文</option>
+            <option value="ja">日文</option>
+            <option value="ko">韩文</option>
+            <option value="fr">法文</option>
+            <option value="es">西班牙文</option>
+            <option value="pt">葡萄牙文</option>
+            <option value="it">意大利文</option>
+            <option value="ru">俄文</option>
+            <option value="vi">越南文</option>
+            <option value="de">德文</option>
+            <option value="ar">阿拉伯文</option>
+            <option value="id">印尼文</option>
+            <option value="it">意大利文</option>
+        </select>
+
+        <span style="font-weight: bold; color:white; font-size:20px;">&nbsp;&nbsp;&rarr;&nbsp;&nbsp;</span>
+
+        <select id="to">
+          <option value="zh-CHS">中文</option>
+          <option value="en">英文</option>
+          <option value="ja">日文</option>
+          <option value="ko">韩文</option>
+          <option value="fr">法文</option>
+          <option value="es">西班牙文</option>
+          <option value="pt">葡萄牙文</option>
+          <option value="it">意大利文</option>
+          <option value="ru">俄文</option>
+          <option value="vi">越南文</option>
+          <option value="de">德文</option>
+          <option value="ar">阿拉伯文</option>
+          <option value="id">印尼文</option>
+          <option value="it">意大利文</option>
+        </select>
+
+        <button id="btn_trans" onclick="renderer.submit()" class="btn btn-primary">翻译</button>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <!--text-->
+          <div class="inputarea">
+            <textarea id="q" placeholder="输入你要翻译的文字" oninput="renderer.submit()"></textarea>
+            <a onclick="renderer.clean()" href="javascript:void(0)">清空</a>
+            <span>&nbsp;&nbsp;&nbsp;</span>
+            <a id="querySpeech" href="javascript:void(0)" class="standspeech" hidden>读音</a>
+          </div>
+        </div>
+       
+        <div class="col-md-6">
+          <!--translation-->
+          <div class="inputarea">
+            <textarea id="translation" readonly></textarea>
+            <a class="copy"  data-clipboard-action="copy" data-clipboard-target="#translation" href="javascript:void(0)">复制</a>
+            <span>&nbsp;&nbsp;&nbsp;</span>
+            <a id="translationSpeech" href="javascript:void(0)" class="standspeech" hidden>读音</a>
+          </div>
+        </div>
+    
+      </div>
+
+      <div class="row" id="detail" hidden>
+        <div class="col-md-6">
+          <h1 id="query"></h1>
+          
+          <h3>音标</h3>
+          <!--英式-->
+          <p>
+            <span id="ukPhonetic"></span>
+            <a id="ukSpeech" href="javascript:void(0)" hidden>读音</a>
+          </p>
+          
+          <!--美式-->
+          <p>
+            <span id="usPhonetic"></span>
+            <a id="usSpeech" href="javascript:void(0)" hidden>读音</a>
+          </p>
+          
+          <h3>词性</h3>
+          <p id="explains"></p>
+        </div>
+
+        <div class="col-md-6">
+          <h3>语法</h3>
+          <p id="wfs"></p>
+  
+          <h3>网络释义</h3>
+          <p id="web"></p>
+        </div>
+      </div>
+
+      <audio id="player" autoplay></audio>
+    </div>
+
+  </body>
+</html>

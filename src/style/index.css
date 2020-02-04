@@ -1,0 +1,95 @@
+
+body{
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url("../../assets/background.jpg");
+}
+
+.navbar {min-height:20px ;}
+
+.appbarBtn{
+    -webkit-app-region: no-drag;
+    background-color: #33393b;
+    font-weight: bold;
+    color: white;
+    border: none;
+    outline: none;
+    float: right;
+    margin: 2px;
+    height: 25px;
+    width: 25px;
+}
+
+#titlebar{
+    height: 30px;
+    border: none;
+    background-color: #33393b;
+    -webkit-app-region: drag;
+}
+
+#title,#icon{
+    font-weight: bold;
+    color: white;
+    margin: 3px 0 0 10px;
+    float: left;
+}
+
+.container-fluid{
+    padding: 25px 20px 20px 20px;
+}
+
+#selection{
+    margin: 20px 0 0 10px;
+}
+
+select{
+    height: 34px;
+    width: 80px;
+    outline: none;
+    border: none;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+}
+
+#btn_trans{
+    float: right;
+    outline: none;
+    margin-right: 10px;
+}
+
+.inputarea{
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    padding: 30px;
+    height: 250px;
+    margin-top: 20px;
+}
+
+textarea{
+    border: 0;
+    resize: none;
+    outline: none;
+    font-size: 20px;
+    height: 100%;
+    width: 100%;
+    background-color: #f2f2f2;
+    float: left;
+}
+
+#detail{
+    margin-top: 20px;
+}
+
+#usSpeech,#ukSpeech{
+    font-weight: normal;
+    color:#0e52b1;
+}
+
+p,h3,h1{
+    text-align: center;
+    font-weight: bold;
+}
+
+h3,#query{
+    color: rgb(36, 36, 36);
+}

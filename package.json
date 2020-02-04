@@ -1,0 +1,45 @@
+{
+  "name": "translator",
+  "version": "1.0.0",
+  "description": "linux平台第三方有道词典",
+  "main": "src/main.js",
+  "repository": {
+    "directory": "./",
+    "url": "https://github.com/lixinyang123/Translator.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-builder"
+  },
+  "author": {
+    "name": "lllxy",
+    "email": "lixinyangemil@outlook.com",
+    "url": "https://www.lllxy.site"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "js-sha256": "^0.9.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "electron": "^8.0.0",
+    "electron-builder": "^22.3.2"
+  },
+  "build": {
+    "appId": "com.lllxy.translator",
+    "copyright": "LLLXY",
+    "productName": "Translator",
+    "dmg": {
+      "window": {
+        "x": 100,
+        "y": 100,
+        "width": 500,
+        "height": 300
+      }
+    },
+    "linux": {
+      "icon": "assets/icon.png"
+    }
+  }
+}
