@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "package": "electron-builder"
+    "package": "electron-builder -l"
   },
   "author": {
     "name": "lllxy",
